@@ -1,0 +1,39 @@
+---
+interface Props {
+    title: string,
+    description: string,
+    technologies: string,
+    notes?: string[],
+    link: string,
+}
+
+const { title, description, technologies, link, notes = [] } = Astro.props;
+
+---
+
+<div class="grid grid-cols-1 grid-rows-2 w-full p-5 gap-8 grid-container overflow-hidden md:grid-cols-2 md:gap-0">
+    <div class="flex flex-col w-full h-full row-span-2">
+        <slot />
+    </div>
+    <div class="flex flex-col justify-center gap-5
+     w-full h-full">
+        <div class="flex flex-col">
+            <h1 class="text-3xl md:text-5xl text-detail">{title}</h1>
+            <div class="flex items-start gap-2 ml-0.5">
+                
+                { Array.isArray(notes) && notes.length > 0 && 
+            notes.map(note => (
+                <p class="text-sm">{note}</p>
+            ))
+        }
+        </div>
+        </div>
+        <a target="_blank" href={link} class="bg-detail text-white h-8 w-20 text-center">Visit</a>
+    </div>
+    <div class="flex flex-col h-full w-full items-end justify-center ">
+        <p class="w-full text-sm md:w-2/3">{technologies}</p>
+        <p class="w-full text-lg md:w-2/3">{description}</p>
+    </div>
+</div>
+
+
