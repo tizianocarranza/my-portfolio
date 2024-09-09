@@ -19,7 +19,7 @@ const { title, header } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -29,7 +29,7 @@ const { title, header } = Astro.props;
 		<!-- <Background /> -->
 		<main class="relative w-full h-full text-dark">
 		<Navbar />
-		<div class="h-2/3 w-full overflow-y-auto flex justify-center page-content overflow-x-hidden">
+		<div class="h-2/3 w-full overflow-y-auto flex justify-center page-content">
 			<div class="flex flex-col justify-around items-center gap-14 w-11/12 md:w-3/4 lg:w-2/3 py-20">
 				
 				<h1 class="text-4xl text-center font-semibold lg:text-6xl w-full">{header}</h1>
