@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import natureImg from "../images/image.png";
+import Background from "../components/background/background.astro";
 
 /* 
 	TODO:
@@ -43,5 +44,9 @@ import natureImg from "../images/image.png";
 	</div>
 	<div class="flex flex-col self-end justify-self-center row-start-2 col-start-2">
 		<p>Please use this menu to navigate across sections.</p>
+	</div>
+
+	<div class="relative w-full h-full row-start-2 col-start-1">
+		<Background />
 	</div>
 </Layout>
