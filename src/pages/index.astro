@@ -2,16 +2,29 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import natureImg from "../images/image.png";
+
+/* 
+	TODO:
+	SLIDER WORK
+	FUTURIST STYLE
+*/
+
 ---
 
 <Layout title="Tiziano&apos;s portfolio" header="Hi everyone!">
-	<div class="flex flex-col w-full items-center gap-5 text-center">
-		<p class='w-full'>
+	<div class="flex flex-col self-center gap-5" slot="mobile-content">
+		<p>
 			Hi everyone! my name is <b class="text-detail">Tiziano</b>, I&apos;m a 20 year old 
 			<b>developer</b> who's passionate for creating functional good-looking websites!
 		</p>
-		<p class="w-full">
-			I created this portfolio for you to know me and see some of my work!
+	</p>
+		<p>Please use this menu to navigate across sections.</p>
+	</div>
+
+	<div class="flex flex-col self-center gap-5 row-start-1 col-start-2 ">
+		<p class='w-full'>
+			Hi everyone! my name is <b class="text-detail">Tiziano</b>, I&apos;m a 20 year old 
+			<b>developer</b> who's passionate for creating functional good-looking websites!
 		</p>
 <!-- 		<div class="w-full md:hidden">
 			<p class="w-full mb-5">Theese are my favorite technologies:</p>
@@ -27,5 +40,8 @@ import natureImg from "../images/image.png";
 				<li>Mongoose</li>
 			</ul>
 		</div> -->
+	</div>
+	<div class="flex flex-col self-end justify-self-center row-start-2 col-start-2">
+		<p>Please use this menu to navigate across sections.</p>
 	</div>
 </Layout>

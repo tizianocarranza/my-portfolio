@@ -25,16 +25,26 @@ const { title, header } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="relative h-screen w-screen text-xl font-light leading-9 lg:text-2xl overflow-hidden">
+	<body class="relative h-screen w-screen text-xl font-light leading-9 overflow-hidden">
 		<!-- <Background /> -->
-		<main class="text-dark">
+		<main class="text-dark text-center">
 			<Navbar />
 
-			<div class="flex flex-col h-full w-11/12 items-center pt-10 overflow-hidden">
-				<h1 class="text-4xl text-center font-semibold lg:text-6xl w-full">{header}</h1>
-				<div class="flex-grow flex flex-col justify-around items-center w-full">
+			<div class="grid grid-rows-2 lg:grid-cols-2 h-full w-11/12 items-center pt-10 overflow-hidden">
+
+				<div class="grid row-span-2 grid-cols-subgrid h-full w-full items-center lg:hidden">
+					<h1 class="text-4xl text-center font-semibold lg:text-6xl w-full self-start">{header}</h1>
+					<div class="flex-grow flex flex-col justify-around items-center w-full self-end">
+						<slot name="mobile-content"/>
+					</div>
+				</div>
+
+				<div class="hidden lg:grid row-span-2 col-span-2 grid-cols-subgrid grid-rows-subgrid h-full w-full items-center">
+					<h1 class="text-4xl text-left font-semibold lg:text-6xl w-full self-start">{header}</h1>
 					<slot />
 				</div>
+
+
 			</div>
 
 			<Footer />
