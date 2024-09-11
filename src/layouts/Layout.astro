@@ -2,7 +2,8 @@
 import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/footer/Footer.astro';
 import Navbar from '../components/navbar/Navbar.astro';
-import Background from '../components/background/background.astro';
+import Menu from "../components/menu/Menu.astro"
+
 
 interface Props {
 	title: string;
@@ -34,7 +35,7 @@ const { title, header } = Astro.props;
 
 				<div class="grid row-span-2 grid-cols-subgrid h-full w-full items-center lg:hidden">
 					<h1 class="text-4xl text-center font-semibold lg:text-6xl w-full self-start">{header}</h1>
-					<div class="flex-grow flex flex-col justify-around items-center w-full self-end">
+					<div class="flex-grow flex flex-col justify-center items-center w-full self-start">
 						<slot name="mobile-content"/>
 					</div>
 				</div>
@@ -42,12 +43,20 @@ const { title, header } = Astro.props;
 				<div class="hidden lg:grid row-span-2 col-span-2 grid-cols-subgrid grid-rows-subgrid h-full w-full items-center">
 					<h1 class="text-4xl text-left font-semibold lg:text-6xl w-full self-start">{header}</h1>
 					<slot />
+
+					<div class="flex flex-col place-self-center gap-5 row-start-2 col-start-2">
+						<p class="animate-pulse w-full text-center text-sm">Please use this menu to navigate across sections.</p>
+						<Menu />
+					</div>
 				</div>
-
-
 			</div>
 
-			<Footer />
+			<div class="hidden lg:block w-full">
+				<Footer />
+			</div>
+			<div class=" lg:hidden w-full">
+				<Menu />
+			</div>
 		</main>
 	</body>
 </html>

@@ -1,47 +1,26 @@
 ---
-import FooterButton from "./FooterButton.astro"
-import FooterCurrent from "./FooterCurrent.astro"
-import FooterInfo from "./FooterInfo.astro"
 
-import Image from "astro/components/Image.astro"
-
-import aboutIcon from "../../assets/about-icon.svg"
-import contactIcon from "../../assets/contact-icon.svg"
-import workIcon from "../../assets/work-icon.svg"
-import Sidebar from "../sidebar/Sidebar.astro"
-
-const url = Astro.url.pathname
 ---
 
 
 <footer class="relative flex justify-center items-end w-full h-full z-50 bg-white text-light">
-    
     <div class="relative w-11/12 h-5/6">
         <div class="absolute top-0 left-0 h-full w-full z-10 grid lg:grid-cols-2 py-5 " >
 
             <div class="relative hidden lg:flex justify-start items-end gap-10 w-full h-full">
-                <h1 class="absolute -bottom-5 text-9xl">Tiziano</h1>
-                
+                <h1 class="absolute -bottom-5 -left-10 text-9xl">Tiziano</h1>
             </div>
-            
-            <div class="flex flex-col items-center justify-end gap-2 place-self-end w-full h-full">
-                <FooterInfo />
-                <div class="flex justify-center items-end gap-5 w-11/12 md:w-10/12 lg:w-96 h-8" > 
-                    <FooterButton href="/" >
-                        <Image src={aboutIcon} alt="about" height={40} width={40} slot={"icon"} class={"object-cover"}/>
-                    </FooterButton>
-                    
-                    <FooterButton href="/projects">
-                        <Image src={workIcon} alt="projects" height={30} width={30} slot={"icon"} class={"object-cover"}/>
-                    </FooterButton>
-                    
-                    <FooterButton href="/contact">
-                        <Image src={contactIcon} alt="contact" height={30} width={30} slot={"icon"} class={"object-cover"}/>
-                    </FooterButton>
-                </div>
-                <FooterCurrent />
-            </div>
-            
+<!--             <div class="flex gap-2 text-xs justify-self-center self-end">
+                <h1>Javascript</h1>
+                <h1>HTML</h1>
+                <h1>NextJS</h1>
+                <h1>Tailwind</h1>
+                <h1>NodeJS</h1>
+                <h1>ExpressJS</h1>
+                <h1>CSS</h1>
+                <h1>Mongoose</h1>
+                <h1>Astro</h1>
+            </div> -->
         </div>
     </div>
 </footer>

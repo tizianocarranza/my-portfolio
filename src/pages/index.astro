@@ -13,15 +13,14 @@ import Background from "../components/background/background.astro";
 ---
 
 <Layout title="Tiziano&apos;s portfolio" header="Hi everyone!">
-	<div class="flex flex-col self-center gap-5" slot="mobile-content">
-		<p>
+
+	<!-- Mobile -->
+		<p slot="mobile-content">
 			Hi everyone! my name is <b class="text-detail">Tiziano</b>, I&apos;m a 20 year old 
 			<b>developer</b> who's passionate for creating functional good-looking websites!
 		</p>
-	</p>
-		<p>Please use this menu to navigate across sections.</p>
-	</div>
 
+	<!-- Desktop -->
 	<div class="flex flex-col self-center gap-5 row-start-1 col-start-2 ">
 		<p class='w-full'>
 			Hi everyone! my name is <b class="text-detail">Tiziano</b>, I&apos;m a 20 year old 
@@ -42,11 +41,9 @@ import Background from "../components/background/background.astro";
 			</ul>
 		</div> -->
 	</div>
-	<div class="flex flex-col self-end justify-self-center row-start-2 col-start-2">
-		<p>Please use this menu to navigate across sections.</p>
-	</div>
-
 	<div class="relative w-full h-full row-start-2 col-start-1">
+
+
 		<Background />
 	</div>
 </Layout>
