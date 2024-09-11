@@ -7,6 +7,7 @@ import vercel from "@astrojs/vercel/static"
 
 export default defineConfig({
   integrations: [tailwind(), preact()],
+  site: "https://my-portfolio-delta-one-61.vercel.app",
   output: "static",
   adapter: vercel(),
 });
