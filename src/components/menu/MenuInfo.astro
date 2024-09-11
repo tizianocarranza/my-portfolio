@@ -1,0 +1,10 @@
+---
+    const url = Astro.url.pathname
+    const text = url === "/" ? "About me" : url === "/projects" ? "My work" : "Contact me";
+---
+
+<div class="flex justify-center items-center gap-5 w-11/12 md:w-10/12 lg:w-96 text-center" transition:animate="initial">
+    <p class:list={[
+        "transition-all",
+    ]}>{text}</p>
+</div>

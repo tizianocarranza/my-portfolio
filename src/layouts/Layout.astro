@@ -2,7 +2,7 @@
 import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/footer/Footer.astro';
 import Navbar from '../components/navbar/Navbar.astro';
-import Menu from "../components/menu/Menu.astro"
+import Menu from "../components/menu/Menu.astro";
 
 
 interface Props {
@@ -42,7 +42,7 @@ const { title, header } = Astro.props;
 
 				<div class="hidden lg:grid row-span-2 col-span-2 grid-cols-subgrid grid-rows-subgrid h-full w-full items-center">
 					<h1 class=" text-4xl text-left font-semibold lg:text-6xl w-full self-start">{header}</h1>
-					
+
 					<slot />
 
 					<div class="flex flex-col place-self-center gap-5 row-start-2 col-start-2">
