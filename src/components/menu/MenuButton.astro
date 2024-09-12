@@ -9,7 +9,7 @@ const { href } = Astro.props;
 
 
 <a {href} transition:persist class:list={[
-    "relative flex flex-col items-center justify-center text-center h-full w-full ",
+    "relative flex flex-col items-center justify-center text-center h-full w-full select-none",
 ]}>
     <div class="flex justify-center items-center h-full w-full">
         <slot name="icon"/>
