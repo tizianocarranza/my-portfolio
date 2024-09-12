@@ -11,7 +11,7 @@ export default {
 			},
 			height : {
 				"1/2-screen": "50vh"
-			}
+			},
 		},
 	},
 	plugins: [],

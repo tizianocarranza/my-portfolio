@@ -36,7 +36,7 @@ const { title, header } = Astro.props;
 				<Background />
 
 				<div class="grid row-span-2 grid-cols-subgrid h-full w-full items-center lg:hidden">
-					<h1 class="text-4xl text-center font-semibold lg:text-6xl w-full self-start">{header}</h1>
+					<h1 class="text-4xl text-center font-semibold w-full self-start">{header}</h1>
 					<div class="flex-grow flex flex-col justify-center items-center w-full self-start">
 						<slot name="mobile-content"/>
 					</div>
@@ -54,7 +54,7 @@ const { title, header } = Astro.props;
 				</div>
 			</div>
 
-			<div class="hidden lg:block w-full">
+			<div class="footer-container">
 				<Footer />
 			</div>
 			<div class=" lg:hidden w-full">
@@ -95,7 +95,7 @@ const { title, header } = Astro.props;
 		height: 100%;
 
 		display: grid;
-		grid-template-rows: 40px 4fr 1fr;
+		grid-template-rows: 40px 1fr;
 		grid-template-columns: 1fr;
 		justify-content: center;
 		justify-items: center
@@ -121,6 +121,21 @@ const { title, header } = Astro.props;
 
 	.page-content::-webkit-scrollbar {
 		display: none;
+	}
+
+	.footer-container {
+		display: none;
+		width: 100%;
+	}
+
+	@media (min-height: 700px) {
+		main {
+			grid-template-rows: 40px 4fr 1fr;
+		}
+
+		.footer-container {
+			display: block;
+		}
 	}
 	
 	

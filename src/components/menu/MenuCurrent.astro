@@ -13,7 +13,7 @@
     <div class="flex justify-center items-center w-full h-full">
         <div class:list={[
             "scale-x-0 bg-detail w-1/3 h-full  -3xl transition-all",
-            {"appear" : url == "/projects"},
+            {"appear" : url.startsWith("/projects")},
         ]}></div>
     </div>
     <div class="flex justify-center items-center w-full h-full">
