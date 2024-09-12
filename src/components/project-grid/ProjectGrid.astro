@@ -49,13 +49,13 @@ const {
     class="complex-project grid-cols-4 grid-rows-4 h-full w-full gap-2 text-xs xl:text-sm overflow-hidden project-bento-grid"
 >
     <div
-        class="h-full w-full row-span-3 col-span-2 relative flex items-center justify-center "
+        class="h-full w-full row-span-3 col-span-2 relative flex items-center justify-center bg-light bg-opacity-10"
     >
         <slot />
     </div>
 
     <div
-        class="h-full w-full relative flex-col items-center justify-center lg:col-span-2 gap-2"
+        class="h-full w-full relative flex-col items-center justify-center lg:col-span-2 gap-2 bg-light bg-opacity-10"
     >
         <h1 class="text-2xl xl:text-5xl text-detail text-left">{title}</h1>
     </div>
@@ -66,10 +66,10 @@ const {
     >
         Visit
     </a>
-    <div class="h-full w-full relative flex-col items-center justify-center ">
+    <div class="h-full w-full relative flex-col items-center justify-center bg-light bg-opacity-10">
         <p class="w-full">{technologies}</p>
     </div>
-    <div class="h-full w-full relative flex-col items-center justify-center">
+    <div class="h-full w-full relative flex-col items-center justify-center bg-light bg-opacity-10">
         {
             Array.isArray(notes) &&
                 notes.length > 0 &&
@@ -78,7 +78,7 @@ const {
     </div>
 
     <div
-        class="relative flex flex-col justify-end w-full h-full text-left col-start-1 col-span-4"
+        class="relative flex flex-col justify-end w-full h-full text-left col-start-1 col-span-4 bg-light bg-opacity-10 "
     >
         <p class="w-full">{description}</p>
     </div>
@@ -102,7 +102,7 @@ const {
         border-radius: 10px;
         padding: 15px;
         /* border: 2px solid rgba(156, 156, 156, 0.205); */
-        @apply box-border bg-light bg-opacity-10 shadow-lg;
+        /* @apply box-border backdrop-contrast-200/* bg-light bg-opacity-0 */ /* shadow-lg */ 
     }
     
     .simple-project {
