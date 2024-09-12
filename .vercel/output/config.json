@@ -9,9 +9,23 @@
 			"status": 308
 		},
 		{
-			"src": "/projects/",
+			"src": "/projects/donar/",
 			"headers": {
-				"Location": "/projects"
+				"Location": "/projects/donar"
+			},
+			"status": 308
+		},
+		{
+			"src": "/projects/orbit4/",
+			"headers": {
+				"Location": "/projects/orbit4"
+			},
+			"status": 308
+		},
+		{
+			"src": "/projects/synergia/",
+			"headers": {
+				"Location": "/projects/synergia"
 			},
 			"status": 308
 		},
