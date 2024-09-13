@@ -33,16 +33,16 @@ const { title, header } = Astro.props;
 			<Navbar />
 
 			<div class="relative grid grid-rows-2 lg:grid-cols-2 h-full w-11/12 items-center pt-10 overflow-hidden text-gray-50">
+				<Background />
 				
-				<div class="grid row-span-2 grid-cols-subgrid h-full w-full items-center lg:hidden">
-					<Background />
+				<!-- Mobile -->
+				<div class="relative grid row-span-2 grid-rows-4 grid-cols-subgrid h-full w-full items-center lg:hidden px-2">
 					<h1 class="text-4xl text-center font-semibold w-full self-start text-light">{header}</h1>
-					<div class="flex-grow flex flex-col justify-center items-center w-full self-start">
+					<div class="flex-grow flex flex-col justify-center items-center w-full  self-start row-span-3">
 						<slot name="mobile-content"/>
 					</div>
 				</div>
 				
-				<Background />
 				<div class="hidden lg:grid row-span-2 col-span-2 grid-cols-subgrid grid-rows-subgrid h-full w-full items-center">
 					<h1 class=" text-4xl text-left font-semibold lg:text-6xl self-start ml-3 text-light">{header}</h1>
 
@@ -53,12 +53,13 @@ const { title, header } = Astro.props;
 						<Menu />
 					</div>
 				</div>
+
 			</div>
 
-			<div class="footer-container">
+			<div class="hidden lg:block w-full">
 				<Footer />
 			</div>
-			<div class=" lg:hidden w-full">
+			<div class="lg:hidden w-full">
 				<Menu />
 			</div>
 		</main>
@@ -100,7 +101,7 @@ const { title, header } = Astro.props;
 		height: 100%;
 
 		display: grid;
-		grid-template-rows: 40px 1fr;
+		grid-template-rows: 40px 4fr 1fr;
 		grid-template-columns: 1fr;
 		justify-content: center;
 		justify-items: center
@@ -123,25 +124,15 @@ const { title, header } = Astro.props;
 		@apply pb-1 bg-transparent border-b outline-none italic text-gray-50;
 	}
 
+	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+		@apply text-gray-50
+	}
+	input::placeholder, textarea::placeholder {
+		@apply text-gray-50
+	}
+
 
 	.page-content::-webkit-scrollbar {
 		display: none;
 	}
-
-	.footer-container {
-		display: none;
-		width: 100%;
-	}
-
-	@media (min-height: 700px) {
-		main {
-			grid-template-rows: 40px 4fr 1fr;
-		}
-
-		.footer-container {
-			display: block;
-		}
-	}
-	
-	
 </style>
