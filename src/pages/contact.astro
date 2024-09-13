@@ -10,10 +10,10 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
 	<form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col items-center w-full text-lg gap-8 text-center" slot="mobile-content">
 		<input type="hidden" name="access_key" value={accessKey}>
 
-		<h1 class="italic font-medium">Send me a message</h1>
+		<h1 class="font-medium">Send me a message</h1>
 
-		<div class="flex flex-col w-full h-full gap-3">
-			<p class=''>"Hey, my name is
+		<div class="flex flex-col w-full h-full gap-3 italic">
+			<p>"Hey, my name is
 			<span>
 				<input class="text-center border-b border-light" type="text" name="name" id="name" placeholder="(your name here)" required/>
 			</span> and my email 			
@@ -38,10 +38,10 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
 	<form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col items-center lg:w-2/3 gap-8 text-center row-start-1 col-start-2 row-span-2 place-self-center">
 		<input type="hidden" name="access_key" value={accessKey}>
 
-		<h1 class="italic font-medium">Send me a message</h1>
+		<h1 class="font-medium">Send me a message</h1>
 
-		<div class="flex flex-col w-full h-full gap-5">
-			<p class=''>"Hey, my name is
+		<div class="flex flex-col w-full h-full gap-5 italic">
+			<p>"Hey, my name is
 			<span>
 				<input class="text-center border-b border-light" type="text" name="name" id="name" placeholder="(your name here)" required/>
 			</span> and my email 			
