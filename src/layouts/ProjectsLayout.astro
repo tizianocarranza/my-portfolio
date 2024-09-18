@@ -18,7 +18,7 @@ prev = projectTitle == "Donar" ? "orbit4" : projectTitle == "Synergia" ? "donar"
     <!-- Moble -->
     <div class="flex flex-col gap-2 h-full w-full" slot="mobile-content">
         <slot />
-        <div class="flex gap-10 place-self-center text-lg font-medium">
+        <div class="flex gap-10 place-self-center text-lg">
             <a class="text-detail" href={`./${prev}`}>Watch previous</a>
             <a class="text-detail" href={`./${next}`}>Watch next</a>
         </div>
@@ -26,7 +26,7 @@ prev = projectTitle == "Donar" ? "orbit4" : projectTitle == "Synergia" ? "donar"
 
     <!-- Desktop -->
     <div
-        class="flex flex-col gap-2 col-start-2 row-start-2 self-end justify-self-center font-medium"
+        class="flex flex-col gap-2 col-start-2 row-start-2 self-end justify-self-center"
     >
         <a class="text-detail text-xl xl:text-3xl" href={`./${next}`}>Watch next</a>
         <a class="text-detail text-xl xl:text-3xl" href={`./${prev}`}>Watch previous</a>
