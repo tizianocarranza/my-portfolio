@@ -37,14 +37,14 @@ const { title, header } = Astro.props;
 				
 				<!-- Mobile -->
 				<div class="relative grid row-span-2 grid-rows-6 grid-cols-subgrid h-full w-full items-center lg:hidden px-2">
-					<h1 class="text-4xl text-center font-semibold w-full self-start">{header}</h1>
-					<div class="flex-grow flex flex-col justify-center items-center w-full  self-start row-span-5">
+					<h1 class="text-5xl md:text-6xl text-center font-semibold w-full self-center">{header}</h1>
+					<div class="flex-grow flex flex-col justify-center items-center w-full  self-center row-span-5">
 						<slot name="mobile-content"/>
 					</div>
 				</div>
 				
 				<div class="hidden lg:grid row-span-2 col-span-2 grid-cols-subgrid grid-rows-subgrid h-full w-full items-center">
-					<h1 class=" text-4xl text-left font-semibold lg:text-6xl self-start ml-3">{header}</h1>
+					<h1 class="text-7xl xl:text-9xl text-left font-semibold self-start ml-3">{header}</h1>
 
 					<slot />
 
