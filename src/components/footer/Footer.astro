@@ -1,8 +1,18 @@
-<footer class="relative flex justify-center items-end w-full h-full z-50 text-light">
-    <div class="relative w-11/12 h-5/6">
+---
+import Background from "../background/background.astro";
+---
+
+<footer class="relative flex justify-center items-end w-full h-full z-50 text-detail">
+    <div class="relative w-11/12 h-5/6 border-t-2">
         
         <div class="relative hidden lg:flex justify-center items-end gap-10 w-full h-full">
-            <h1 class="absolute -bottom-0 -left-10 text-9xl select-none">Tiziano</h1>
+<!--             <div class="relative">
+
+                <h1 class="absolute -bottom-0  text-9xl select-none">Tiziano</h1>
+            </div> -->
+            <div class="relative h-full w-full">
+                <Background />
+            </div>
         </div>
     </div>
 </footer>
