@@ -5,9 +5,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				"detail": "#e43d12",
-				"dark": "#ebe9e1",
-				"light": "#cbcbcb" 
+				"dark": "#3B3030",
+				"light": "#ebe9e1",
 			},
 			height : {
 				"1/2-screen": "50vh"
@@ -15,8 +14,8 @@ export default {
 			fontSize: {
 				"big": "100px",
 				"bigger": "140px",
-				"extra-big": "170px",
-				"giant": "200px"
+				"extra-big": "150px",
+				"giant": "170px"
 			},
 		},
 	},
