@@ -29,22 +29,22 @@ const { title, header } = Astro.props;
 	</head>
 	<body class="relative h-screen w-screen text-xl font-light leading-9 overflow-hidden">
 		<!-- <Background /> -->
-		<main class="text-light text-center bg-dark">
+		<main class="text-white text-center bg-dark">
 			<Navbar />
 
-			<div class="relative grid grid-rows-2 lg:grid-cols-2 h-full w-11/12 items-center pt-10 overflow-hidden text-gray-50">
+			<div class="relative grid grid-rows-2 lg:grid-cols-2 h-full w-11/12 items-center pt-10 overflow-hidden">
 				<Background />
 				
 				<!-- Mobile -->
 				<div class="relative grid row-span-2 grid-rows-6 grid-cols-subgrid h-full w-full items-center lg:hidden px-2">
-					<h1 class="text-4xl text-center font-semibold w-full self-start text-light">{header}</h1>
+					<h1 class="text-4xl text-center font-semibold w-full self-start">{header}</h1>
 					<div class="flex-grow flex flex-col justify-center items-center w-full  self-start row-span-5">
 						<slot name="mobile-content"/>
 					</div>
 				</div>
 				
 				<div class="hidden lg:grid row-span-2 col-span-2 grid-cols-subgrid grid-rows-subgrid h-full w-full items-center">
-					<h1 class=" text-4xl text-left font-semibold lg:text-6xl self-start ml-3 text-light">{header}</h1>
+					<h1 class=" text-4xl text-left font-semibold lg:text-6xl self-start ml-3">{header}</h1>
 
 					<slot />
 
