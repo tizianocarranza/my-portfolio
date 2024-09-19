@@ -1,12 +1,14 @@
 ---
 const url = Astro.url.pathname
+import Menu from "../menu/Menu.astro"
 ---
 
 
-<nav class="relative flex justify-center items-start w-full h-full z-50 text-xs">
-    <div class="relative w-11/12 h-5/6 ">
+<nav class="fixed top-0 left-0 flex justify-center items-center w-full h-10 z-40 text-xs">
+    <div class="relative w-11/12 h-5/6 rounded-md bg-light">
         <div class="absolute top-0 left-0 h-full w-full z-10 flex items-center justify-center" >
-            <p class="">© Tiziano 2024. All rights reserved.</p>
+            <Menu />
+            
         </div>
     </div>
 </footer>

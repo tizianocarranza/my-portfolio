@@ -1,47 +1,250 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout2 from "../layouts/Layout2.astro";
+import ProjectGrid from "../components/project-grid/ProjectGrid.astro";
 import { Image } from "astro:assets";
-import natureImg from "../images/image.png";
-import Background from "../components/background/background.astro";
+import DonarImg from "../assets/donar-desktop-removebg.png";
+import SynergiaImg from "../assets/synergia-desktop-removebg.png";
+import Orbit4Img from "../assets/orbit4-desktop-removebg.png";
 
-/* 
-	TODO:
-	SLIDER WORK
-	FUTURIST STYLE
-*/
-
+const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
 ---
 
-<Layout title="Tiziano&apos;s portfolio" header="Hey everyone!">
+<Layout2 title="Together">
+    <!-- Section: HERO -->
+    <section
+        class="bg-light text-dark items-center"
+    >
+        <h1 class="title break-words w-full">Hey everyone!</h1>
 
-	<!-- Mobile -->
-		<p slot="mobile-content">
-			Hi everyone! my name is <b>Tiziano</b>, I&apos;m a 20 year old 
-			<b>developer</b> who's passionate for creating functional good-looking websites!
-		</p>
+        <div class="flex-1 flex flex-col items-center justify-center gap-5 w-full lg:w-1/2">
+            <p class="">
+                Hi everyone! my name is <b>Tiziano</b>, I&apos;m a 20 year old
+                <b>developer</b> who's passionate for creating functional good-looking
+                websites!
+            </p>
+            <div class="relative h-10 w-96 shadow-lg">
+                <div class="rainbow-bg"></div>
+            </div>
+        </div>
+    </section>
 
-	<!-- Desktop -->
-	<div class="flex flex-col self-end gap-5 row-start-1 col-start-2 p-1 rounded-lg">
-		<p class='w-full'>
-			Hi everyone! my name is <b>Tiziano</b>, I&apos;m a 20 year old 
-			<b>developer</b> who's passionate for creating functional good-looking websites!
-		</p>
-<!-- 		<div class="w-full md:hidden">
-			<p class="w-full mb-5">Theese are my favorite technologies:</p>
-			<ul class="flex flex-col w-full gap-2 italic">
-				<li>Javascript</li>
-				<li>Astro</li>
-				<li>HTML</li>
-				<li>NextJS</li>
-				<li>Tailwind</li>
-				<li>NodeJS</li>
-				<li>ExpressJS</li>
-				<li>CSS</li>
-				<li>Mongoose</li>
-			</ul>
-		</div> -->
-	</div>
-<!-- 	<div class="relative w-full h-full row-start-2 col-start-1">
-		<Background />
-	</div> -->
-</Layout>
+    <!-- Section: Skills -->
+    <section class="bg-light text-dark items-center">
+        <h1 class="title break-words w-full">My favorite tools!</h1>
+
+        <div
+            class="relative h-48 w-full lg:w-1/2 lg:h-96 grid grid-cols-4 grid-rows-2 gap-2 p-2 rounded-sm text-sm"
+        >
+            <div class="rainbow-bg"></div>
+            <div
+                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+            >
+                JavaScript
+            </div>
+            <div
+                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+            >
+                TypeScript
+            </div>
+            <div
+                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+            >
+                React
+            </div>
+            <div
+                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+            >
+                NextJS
+            </div>
+            <div
+                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+            >
+                Astro
+            </div>
+            <div
+                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+            >
+                NodeJs
+            </div>
+            <div
+                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+            >
+                NodeJS
+            </div>
+            <div
+                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+            >
+                Mongoose
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Projects -->
+    <section
+        class="w-full bg-light text-dark justify-center items-center"
+    >
+        <script>
+            const carousel = document.querySelector(".carousel");
+            const prevButton = document.querySelector(".prev");
+            const nextButton = document.querySelector(".next");
+
+            let index = 0;
+
+            function updateCarousel() {
+                if (carousel) {
+                    carousel.style.transform = `translateX(-${index * 33.33}%)`;
+                }
+            }
+
+            if (nextButton) {
+                nextButton.addEventListener("click", () => {
+                    index = (index + 1) % 3; // 3 is the number of items, osea que cuando llegue a 3 --> modulo de 3/3 = 0, se va a la primera
+                    updateCarousel();
+                });
+            }
+
+            if (prevButton) {
+                prevButton.addEventListener("click", () => {
+                    index = (index - 1 + 3) % 3; // 3 is the number of items, osea que cuando llegue a 0 --> modulo de (-1+3)/3 = 2, se va a la ultima
+                    updateCarousel();
+                });
+            }
+        </script>
+
+        <h1 class="title">My work!</h1>
+
+        <div
+            class="w-full lg:w-1/2 flex flex-col justify-center gap-10 overflow-x-hidden"
+        >
+            <div
+                style="width: 300%;"
+                class="carousel grid grid-cols-3 transition-transform duration-300"
+            >
+                <ProjectGrid
+                    title="DonAr"
+                    technologies="React, NodeJS, ExpressJS, Mongoose, Javascript, HTML, CSS."
+                    description="Don.Ar is a platform dedicated to connecting generous hearts with causes that really matter."
+                    link="https://don-ar.com/"
+                    notes={["Graduation work.", "Backend developer."]}
+                >
+                    <Image
+                        src={DonarImg}
+                        alt={"DonAr mockup"}
+                        class={"object-contain"}
+                    />
+                </ProjectGrid>
+
+                <ProjectGrid
+                    title="Synergia"
+                    technologies="NextJS, Tailwind, Mongoose, JavaScript, HTML."
+                    description="Synergia is an innovative web application designed to connect and enhance collaboration between developers and organizations in the tech industry."
+                    link="https://synergia-project.vercel.app/"
+                    notes={["Personal project."]}
+                >
+                    <Image
+                        src={SynergiaImg}
+                        alt={"Synergia mockup"}
+                        class={"object-contain"}
+                    />
+                </ProjectGrid>
+
+                <ProjectGrid
+                    title="Orbit4"
+                    technologies="React, JavaScript, HTML, CSS."
+                    description="Pure CSS Scroll based animated website experience set in outer space."
+                    link="https://orbit4.vercel.app/"
+                    notes={["Personal project."]}
+                >
+                    <Image
+                        src={Orbit4Img}
+                        alt={"Synergia mockup"}
+                        class={"object-contain"}
+                    />
+                </ProjectGrid>
+            </div>
+
+            <div
+                class="flex gap-5 lg:gap-20 w-full justify-center items-center py-2"
+            >
+                <button class="prev bg-dark button">Previous</button>
+                <button class="next bg-dark button">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contact -->
+    <section class="bg-light text-dark  items-center">
+        <h1 class="title">Contact me!</h1>
+        <!-- Desktop -->
+        <div class="relative w-full lg:w-1/2 flex items-center justify-center p-2">
+            <div class="rainbow-bg"></div>
+
+            <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="relative flex flex-col items-center gap-10 p-4 lg:p-8 bg-transparent shadow-lg rounded-md text-center bg-white"
+            >
+                <h1 class="font-extrabold text-2xl lg:text-3xl text-dark z-10">
+                    Send me a message
+                </h1>
+                <input type="hidden" name="access_key" value={accessKey} />
+
+                <div
+                    class="flex flex-col w-full gap-6 text-lg text-dark italic z-10"
+                >
+                    <p class="leading-relaxed">
+                        "Hey, my name is
+                        <span>
+                            <input
+                                class="text-center border-b-2 border-dark focus:outline-none focus:border-primary transition-all duration-300 w-48"
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="(your name here)"
+                                required
+                            />
+                        </span>
+                        and my email
+                        <span>
+                            <input
+                                class="text-center border-b-2 border-dark focus:outline-none focus:border-primary transition-all duration-300 w-64"
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="(your email here)"
+                                required
+                            />
+                        </span>. I have an exciting <b>project/idea</b> that I'd
+                        love to <b>bring to life</b> with your expertise. Here are
+                        the details:
+                    </p>
+
+                    <div class="flex flex-col items-center w-full">
+                        <textarea
+                            class="w-full h-32 border-2 border-dark rounded-lg p-4 focus:outline-none focus:border-primary transition-all duration-300 resize-none"
+                            placeholder="Describe your amazing idea here..."
+                            name="message"
+                            required></textarea>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-3 z-10">
+                    <button type="submit" class="button"> Send </button>
+                    <a
+                        href="mailto:tzndevv@gmail.com"
+                        target="_blank"
+                        class="text-sm text-primary hover:underline"
+                    >
+                        or send me an email.
+                    </a>
+                </div>
+            </form>
+        </div>
+    </section>
+</Layout2>
+
+<style>
+    .content-wrapper {
+        @apply flex-1 flex flex-col items-center justify-center gap-5 w-full lg:w-1/2;
+    }
+</style>

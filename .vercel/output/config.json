@@ -2,34 +2,6 @@
 	"version": 3,
 	"routes": [
 		{
-			"src": "/contact/",
-			"headers": {
-				"Location": "/contact"
-			},
-			"status": 308
-		},
-		{
-			"src": "/projects/donar/",
-			"headers": {
-				"Location": "/projects/donar"
-			},
-			"status": 308
-		},
-		{
-			"src": "/projects/orbit4/",
-			"headers": {
-				"Location": "/projects/orbit4"
-			},
-			"status": 308
-		},
-		{
-			"src": "/projects/synergia/",
-			"headers": {
-				"Location": "/projects/synergia"
-			},
-			"status": 308
-		},
-		{
 			"src": "^/_astro/(.*)$",
 			"headers": {
 				"cache-control": "public, max-age=31536000, immutable"

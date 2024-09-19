@@ -5,10 +5,14 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				"dark": "#3B3030",
-				"light": "#ebe9e1",
+				'light': '#fbfcfd',
+				'medium': '#203A43',
+				'dark': '#0F2027',
 			},
-			height : {
+			backgroundImage: {
+				'rainbow-gradient': 'linear-gradient(to right, #FFB3BA, #FFDFBA, #FFFFBA, #BAFFC9, #BAE1FF)',
+			  },
+			height: {
 				"1/2-screen": "50vh"
 			},
 			fontSize: {

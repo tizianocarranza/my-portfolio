@@ -24,52 +24,58 @@ const {
 
 <!-- Mobile -->
 <div
-    class="simple-project grid-cols-2 grid-rows-2 h-full w-full gap-2 text-xs overflow-hidden project-bento-grid "
+    class="simple-project grid-cols-2 grid-rows-2 py-5 h-full w-full gap-2 text-xs overflow-hidden project-bento-grid"
 >
-    <div class="flex w-full h-full items-center justify-center bg-dark bg-opacity-20">
+    <div class="flex w-full h-full items-center justify-center bg-opacity-20">
         <div class="max-w-32 bg-transparent">
             <slot />
         </div>
     </div>
-    <div class="text-xl  text-dark bg-dark bg-opacity-20">{title}</div>
-    <div class="bg-dark bg-opacity-20">{technologies}</div>
+    <div class="text-xl  text-dark bg-opacity-20">{title}</div>
+    <div class="bg-opacity-20">{technologies}</div>
     <a
-    target="_blank"
-    href={link}
-    class=" bg-dark text-light text-lg"
->
-    Visit
-</a>
+        target="_blank"
+        href={link}
+        class="relative text-xl"
+    >
+        <div class="rainbow-bg"></div>
+        <p class="z-10">Visit</p>
+    </a>
 </div>
 
 
 
 <!-- Desktop bento -->
 <div
-    class="complex-project grid-cols-4 grid-rows-4 h-full w-full gap-2 text-xs xl:text-sm overflow-hidden project-bento-grid"
+    class="complex-project bg-light text-dark rounded-md grid-cols-4 grid-rows-4 gap-3 p-3 text-xs xl:text-sm overflow-hidden project-bento-grid"
 >
     <div
-        class="h-full w-full row-span-3 col-span-2 relative flex items-center justify-center bg-dark bg-opacity-20"
+        class="h-full w-full row-span-3 col-span-2 relative flex items-center justify-center "
     >
         <slot />
     </div>
 
     <div
-        class="h-full w-full relative flex-col items-center justify-center lg:col-span-2 gap-2 bg-dark bg-opacity-20"
+        class="h-full w-full relative flex-col items-center justify-center lg:col-span-2 gap-2"
     >
-        <h1 class="text-2xl xl:text-5xl  text-dark text-left">{title}</h1>
+        <h1 class="text-2xl xl:text-5xl text-left">{title}</h1>
     </div>
+
+
     <a
         target="_blank"
         href={link}
-        class=" bg-dark col-span-2 text-light text-xl xl:text-3xl border-none"
+        class="relative col-span-2 text-xl xl:text-3xl"
     >
-        Visit
+        <div class="rainbow-bg"></div>
+        <p class="z-10">Visit</p>
     </a>
-    <div class="h-full w-full relative flex-col items-center justify-center bg-dark bg-opacity-20">
+
+
+    <div class="h-full w-full relative flex-col items-center justify-center">
         <p class="w-full">{technologies}</p>
     </div>
-    <div class="h-full w-full relative flex-col items-center justify-center bg-dark bg-opacity-20">
+    <div class="h-full w-full relative flex-col items-center justify-center">
         {
             Array.isArray(notes) &&
                 notes.length > 0 &&
@@ -78,19 +84,13 @@ const {
     </div>
 
     <div
-        class="relative flex flex-col justify-end w-full h-full text-left col-start-1 col-span-4 bg-dark bg-opacity-20 "
+        class="relative flex flex-col justify-end w-full h-full text-left col-start-1 col-span-4"
     >
         <p class="w-full">{description}</p>
     </div>
 </div>
 
 <style>
-    .project-bento-grid {
-        padding: 10px;
-/*         grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(4, 1fr); */
-    }
-
     .project-bento-grid > * {
         display: flex;
         flex-direction: column;
@@ -102,7 +102,7 @@ const {
         border-radius: 10px;
         padding: 15px;
         /* border: 2px solid rgba(156, 156, 156, 0.205); */
-        /* @apply box-border backdrop-contrast-200/* bg-light bg-opacity-0 */ /* shadow-lg */ 
+        @apply shadow-lg;
     }
     
     .simple-project {

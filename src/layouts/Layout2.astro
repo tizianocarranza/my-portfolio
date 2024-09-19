@@ -9,10 +9,9 @@ import Image from 'astro/components/Image.astro';
 
 interface Props {
 	title: string;
-	header: string;
 }
 
-const { title, header } = Astro.props;
+const { title } = Astro.props;
 
 
 ---
@@ -28,42 +27,12 @@ const { title, header } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="relative h-screen w-screen text-lg  font-normal lg:font-medium lg:text-xl leading-snug overflow-hidden">
+	<body class="relative h-screen w-screen text-xl md:text-2xl lg:text-3xl font-medium leading-snug overflow-hidden">
 		<!-- <Background /> -->
-		<main class=" text-dark text-center bg-light">
-			<Navbar />
-			
-			<Image src={BackgroundSvg} alt={"curve"} class={"hidden lg:block absolute bottom-0 left-0 w-full"}/>
-			<div class="relative grid grid-rows-2 lg:grid-cols-2 h-full w-11/12 items-center pt-10 overflow-hidden">
-				<!-- <Background /> -->
-				
-				<!-- Mobile -->
-				<div class="relative grid row-span-2 grid-rows-6 grid-cols-subgrid h-full w-full items-center lg:hidden px-2">
-					<h1 class="title text-center w-full self-center ">{header}</h1>
-					<div class="flex-grow flex flex-col justify-center items-center w-full  self-center row-span-5">
-						<slot name="mobile-content"/>
-					</div>
-				</div>
-				
-				<div class="hidden lg:grid row-span-2 col-span-2 grid-cols-subgrid grid-rows-subgrid h-full w-full items-center">
-					<h1 class="title text-left self-start break-words">{header}</h1>
-					
-					<slot />
-					
-<!-- 					<div class="flex flex-col items-center justify-self-center self-end gap-5 row-start-2 col-start-1 col-span-2  text-light">
-						<p class="animate-pulse w-full text-center text-sm text-black">Please use this menu to navigate across sections.</p>
-						<Menu />
-					</div> -->
-				</div>
-				
-			</div>
-			
-			<div class="hidden lg:block w-full text-light">
-				<Footer />
-			</div>
-			<div class="lg:hidden w-full  bg-dark text-light">
-				<Menu />
-			</div>
+		<main class="relative text-center overflow-y-scroll overflow-x-hidden h-screen w-full bg-light">
+			<!-- <Navbar /> -->
+            <slot />
+            <Footer />
 		</main>
 	</body>
 </html>
@@ -103,40 +72,25 @@ const { title, header } = Astro.props;
 		@apply	text-black bg-opacity-0;
 	}
 
-	body::-webkit-scrollbar {
+	div, a {
+		@apply rounded-md;
+	}
+
+	body::-webkit-scrollbar, main::-webkit-scrollbar {
 		display: none;
 	}
 
 	body {
-		font-family: Plein-Variable;
+		font-family: CabinetGrotesk-Variable;
 		word-spacing: 1px;
 	}
-
-	main {
-		position: fixed;
-		top: 0;
-		left: 0;
-
-		width: 100%;
-		height: 100%;
-
-		display: grid;
-		grid-template-rows: 40px 4fr 1fr;
-		grid-template-columns: 1fr;
-		justify-content: center;
-		justify-items: center;
-	}
+	
+	section {
+        @apply w-full py-20 lg:py-60 px-5 flex flex-col gap-10 lg:gap-32  min-h-screen;
+    }
 
 	mark, ins, b {
 		@apply m-1 italic;
-	}
-
-	b, ins {
-		@apply text-dark;
-	}
-
-	mark {
-		@apply  bg-dark bg-opacity-70 px-2 py-1 m-1 italic;
 	}
 
 	input, textarea {
@@ -150,9 +104,17 @@ const { title, header } = Astro.props;
 		@apply  text-dark;
 	}
 
+	.rainbow-bg {
+        @apply absolute h-full w-full top-0 left-0 bg-rainbow-gradient opacity-30 z-0 animate-pulse;
+    }
+
 	.title {
-		@apply text-7xl md:text-big lg:text-extra-big xl:text-giant font-extrabold tracking-tighter leading-none  text-dark
+		@apply text-7xl md:text-big lg:text-extra-big xl:text-giant font-medium tracking-tighter leading-none;
 	}
+	.button {
+        @apply bg-dark text-light shadow-lg p-3 w-40 rounded-lg lg:hover:bg-transparent lg:hover:text-dark transition-colors duration-300;
+    }
+
 	.page-content::-webkit-scrollbar {
 		display: none;
 	}

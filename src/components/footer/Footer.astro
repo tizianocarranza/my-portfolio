@@ -3,16 +3,10 @@ import Background from "../background/background.astro";
 import Menu from "../menu/Menu.astro";
 ---
 
-<footer class="relative flex justify-center items-end w-full h-full z-50 font-extrabold">
-    <div class="relative w-11/12 h-5/6">
-        
-        <div class="relative hidden lg:grid grid-cols-2 justify-center items-end gap-10 w-full h-full">
-            <div class="place-self-start h-full">
-                <Menu />
-            </div>
-            <div class="relative h-full w-full">
-                <Background />
-            </div>
-        </div>
+<footer class="relative flex justify-center items-end w-full h-screen text-light bg-dark z-50">
+    <div class="relative w-11/12 h-5/6 grid grid-rows-3 items-center py-5">
+        <h1 class="title jusify-self-center self-start row-start-2">Thanks for visiting!</h1>
+        <p class="text-xs font-thin self-end row-start-3">© Tiziano 2024. All rights reserved.</p>
     </div>
 </footer>
+
