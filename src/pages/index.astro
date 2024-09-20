@@ -1,7 +1,17 @@
 ---
-import Layout2 from "../layouts/Layout2.astro";
+import Layout from "../layouts/Layout.astro";
 import ProjectGrid from "../components/project-grid/ProjectGrid.astro";
 import { Image } from "astro:assets";
+
+import javascript from "../assets/skills/javascript.svg";
+import typescript from "../assets/skills/typescript.svg";
+import react from "../assets/skills/react.svg";
+import nextjs from "../assets/skills/nextjs.svg";
+import astro from "../assets/skills/astro.svg";
+import nodejs from "../assets/skills/nodejs.svg";
+import tailwind from "../assets/skills/tailwind.svg";
+import mongodb from "../assets/skills/mongodb.svg";
+
 import DonarImg from "../assets/donar-desktop-removebg.png";
 import SynergiaImg from "../assets/synergia-desktop-removebg.png";
 import Orbit4Img from "../assets/orbit4-desktop-removebg.png";
@@ -9,14 +19,14 @@ import Orbit4Img from "../assets/orbit4-desktop-removebg.png";
 const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
 ---
 
-<Layout2 title="Together">
+<Layout title="Tiziano's Portfolio">
     <!-- Section: HERO -->
-    <section
-        class="bg-light text-dark items-center"
-    >
+    <section id="hero" class="bg-light text-dark items-center min-h-screen mt-20 lg:mt-40">
         <h1 class="title break-words w-full">Hey everyone!</h1>
 
-        <div class="flex-1 flex flex-col items-center justify-center gap-5 w-full lg:w-1/2">
+        <div
+            class="flex flex-col items-center justify-center gap-5 w-full lg:w-1/2"
+        >
             <p class="">
                 Hi everyone! my name is <b>Tiziano</b>, I&apos;m a 20 year old
                 <b>developer</b> who's passionate for creating functional good-looking
@@ -29,7 +39,7 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
     </section>
 
     <!-- Section: Skills -->
-    <section class="bg-light text-dark items-center">
+    <section id="skills" class="bg-light text-dark items-center">
         <h1 class="title break-words w-full">My favorite tools!</h1>
 
         <div
@@ -39,50 +49,63 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                JavaScript
+                <Image
+                    src={javascript}
+                    alt={"JavaScript"}
+                    width={40}
+                    height={40}
+                />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                TypeScript
+                <Image
+                    src={typescript}
+                    alt={"TypeScript"}
+                    width={40}
+                    height={40}
+                />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                React
+                <Image src={react} alt={"React"} width={40} height={40} />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                NextJS
+                <Image src={nextjs} alt={"NextJs"} width={40} height={40} />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                Astro
+                <Image src={astro} alt={"Astro"} width={40} height={40} />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                NodeJs
+                <Image src={nodejs} alt={"NodeJs"} width={40} height={40} />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                NodeJS
+                <Image src={mongodb} alt={"MongoDB"} width={40} height={40} />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                Mongoose
+                <Image
+                    src={tailwind}
+                    alt={"TailwindCSS"}
+                    width={40}
+                    height={40}
+                />
             </div>
         </div>
     </section>
 
     <!-- Section: Projects -->
-    <section
-        class="w-full bg-light text-dark justify-center items-center"
-    >
+    <section id="projects" class="w-full bg-light text-dark justify-center items-center">
         <script>
             const carousel = document.querySelector(".carousel");
             const prevButton = document.querySelector(".prev");
@@ -173,10 +196,12 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
     </section>
 
     <!-- Section: Contact -->
-    <section class="bg-light text-dark  items-center">
+    <section id="contact" class="bg-light text-dark items-center">
         <h1 class="title">Contact me!</h1>
         <!-- Desktop -->
-        <div class="relative w-full lg:w-1/2 flex items-center justify-center p-2">
+        <div
+            class="relative w-full lg:w-1/2 flex items-center justify-center p-2"
+        >
             <div class="rainbow-bg"></div>
 
             <form
@@ -241,10 +266,4 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
             </form>
         </div>
     </section>
-</Layout2>
-
-<style>
-    .content-wrapper {
-        @apply flex-1 flex flex-col items-center justify-center gap-5 w-full lg:w-1/2;
-    }
-</style>
+</Layout>

@@ -2,10 +2,6 @@
 import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/footer/Footer.astro';
 import Navbar from '../components/navbar/Navbar.astro';
-import Menu from "../components/menu/Menu.astro";
-import BackgroundSvg from "../assets/curve.svg"
-import Image from 'astro/components/Image.astro';
-
 
 interface Props {
 	title: string;
@@ -29,8 +25,8 @@ const { title } = Astro.props;
 	</head>
 	<body class="relative h-screen w-screen text-xl md:text-2xl lg:text-3xl font-medium leading-snug overflow-hidden">
 		<!-- <Background /> -->
-		<main class="relative text-center overflow-y-scroll overflow-x-hidden h-screen w-full bg-light">
-			<!-- <Navbar /> -->
+		<main class="relative text-center overflow-y-scroll overflow-x-hidden h-screen w-full bg-light text-dark scroll-smooth">
+			<Navbar />
             <slot />
             <Footer />
 		</main>
@@ -69,7 +65,7 @@ const { title } = Astro.props;
 }
 
 	* ::selection {
-		@apply	text-black bg-opacity-0;
+		@apply	text-light bg-dark;
 	}
 
 	div, a {
@@ -86,7 +82,7 @@ const { title } = Astro.props;
 	}
 	
 	section {
-        @apply w-full py-20 lg:py-60 px-5 flex flex-col gap-10 lg:gap-32  min-h-screen;
+        @apply w-full pb-40 pt-10 lg:pb-80 px-5 flex flex-col gap-10 lg:gap-32 ;
     }
 
 	mark, ins, b {
