@@ -10,7 +10,7 @@ export default {
 				'dark': '#0F2027',
 			},
 			backgroundImage: {
-				'rainbow-gradient': 'linear-gradient(to right, #FFB3BA, #FFDFBA, #FFFFBA, #BAFFC9, #BAE1FF)',
+				'custom-gradient': 'radial-gradient(circle, #0F2027, #4B757B, #A8B7BC, #C4D8DC, #FBFCFD);',
 			  },
 			height: {
 				"1/2-screen": "50vh"
