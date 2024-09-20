@@ -24,19 +24,19 @@ const {
 
 <!-- Mobile -->
 <div
-    class="simple-project grid-cols-2 grid-rows-2 py-5 h-full w-full gap-2 text-xs overflow-hidden project-bento-grid"
+    class="simple-project grid-cols-2 grid-rows-2 py-5 h-full w-full gap-2 text-xs md:text-lg overflow-hidden project-bento-grid"
 >
     <div class="flex w-full h-full items-center justify-center bg-opacity-20">
         <div class="max-w-32 bg-transparent">
             <slot />
         </div>
     </div>
-    <div class="text-xl  text-dark bg-opacity-20">{title}</div>
+    <div class="text-xl md:text-3xl  text-dark bg-opacity-20">{title}</div>
     <div class="bg-opacity-20">{technologies}</div>
     <a
         target="_blank"
         href={link}
-        class="relative text-xl text-light"
+        class="relative text-xl md:text-3xl text-light"
     >
         <div class="gradient-bg"></div>
         <p class="z-10">Visit</p>
@@ -47,7 +47,7 @@ const {
 
 <!-- Desktop bento -->
 <div
-    class="complex-project bg-light text-dark rounded-md grid-cols-4 grid-rows-4 gap-3 p-3 text-xs xl:text-sm overflow-hidden project-bento-grid"
+    class="complex-project bg-light text-dark rounded-md grid-cols-4 grid-rows-4 gap-2 p-3 text-xs xl:text-sm overflow-hidden project-bento-grid"
 >
     <div
         class="h-full w-full row-span-3 col-span-2 relative flex items-center justify-center "
