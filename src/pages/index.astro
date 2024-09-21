@@ -43,7 +43,7 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
         <h1 class="title break-words w-full">My favorite tools!</h1>
 
         <div
-            class="relative h-48 w-full lg:w-1/2 md:h-96 grid grid-cols-4 grid-rows-2 gap-2 p-2 rounded-sm text-sm"
+            class="relative h-48 w-full lg:w-1/2 md:h-96 grid grid-cols-4 grid-rows-2 gap-1 lg:gap-2 p-2 rounded-sm text-sm"
         >
             <div class="gradient-bg"></div>
             <div
@@ -54,6 +54,7 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
                     alt={"JavaScript"}
                     width={40}
                     height={40}
+                    class={"skill-img"}
                 />
             </div>
             <div
@@ -64,32 +65,34 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
                     alt={"TypeScript"}
                     width={40}
                     height={40}
+                    class={"skill-img"}
                 />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                <Image src={react} alt={"React"} width={40} height={40} />
+                <Image src={react} alt={"React"} width={40} height={40} class={"skill-img"}
+                />
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                <Image src={nextjs} alt={"NextJs"} width={40} height={40} />
+                <Image src={nextjs} alt={"NextJs"} width={40} height={40} class={"skill-img"}/>
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                <Image src={astro} alt={"Astro"} width={40} height={40} />
+                <Image src={astro} alt={"Astro"} width={40} height={40} class={"skill-img"}/>
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                <Image src={nodejs} alt={"NodeJs"} width={40} height={40} />
+                <Image src={nodejs} alt={"NodeJs"} width={40} height={40} class={"skill-img"}/>
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
-                <Image src={mongodb} alt={"MongoDB"} width={40} height={40} />
+                <Image src={mongodb} alt={"MongoDB"} width={40} height={40} class={"skill-img"}/>
             </div>
             <div
                 class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
@@ -99,9 +102,16 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
                     alt={"TailwindCSS"}
                     width={40}
                     height={40}
+                    class={"skill-img"}
                 />
             </div>
         </div>
+
+        <style>
+            .skill-img {
+                @apply w-1/3 h-1/3 lg:w-1/4 lg:h-1/4;
+            }
+        </style>
     </section>
 
     <!-- Section: Projects -->
