@@ -43,11 +43,11 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
         <h1 class="title break-words w-full">My favorite tools!</h1>
 
         <div
-            class="relative h-48 w-full lg:w-1/2 md:h-96 grid grid-cols-4 grid-rows-2 gap-1 lg:gap-2 p-2 rounded-sm text-sm"
+            class="relative h-48 w-full lg:w-1/2 md:h-96 grid grid-cols-4 grid-rows-2 gap-1 lg:gap-2 p-2 rounded-sm text-sm skills-container"
         >
             <div class="gradient-bg"></div>
             <div
-                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+                class="skill-img-container bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
                 <Image
                     src={javascript}
@@ -58,7 +58,7 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
                 />
             </div>
             <div
-                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+                class="skill-img-container bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
                 <Image
                     src={typescript}
@@ -69,33 +69,33 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
                 />
             </div>
             <div
-                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+                class="skill-img-container bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
                 <Image src={react} alt={"React"} width={40} height={40} class={"skill-img"}
                 />
             </div>
             <div
-                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+                class="skill-img-container bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
                 <Image src={nextjs} alt={"NextJs"} width={40} height={40} class={"skill-img"}/>
             </div>
             <div
-                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+                class="skill-img-container bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
                 <Image src={astro} alt={"Astro"} width={40} height={40} class={"skill-img"}/>
             </div>
             <div
-                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+                class="skill-img-container bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
                 <Image src={nodejs} alt={"NodeJs"} width={40} height={40} class={"skill-img"}/>
             </div>
             <div
-                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+                class="skill-img-container bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
                 <Image src={mongodb} alt={"MongoDB"} width={40} height={40} class={"skill-img"}/>
             </div>
             <div
-                class="bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
+                class="skill-img-container bg-white h-full w-full flex items-center justify-center z-10 shadow-lg"
             >
                 <Image
                     src={tailwind}
@@ -108,7 +108,10 @@ const accessKey = import.meta.env.WEB_3_EMAIL_ACCESS_KEY;
         </div>
 
         <style>
-            .skill-img {
+            .skills-container .skill-img-container {
+                @apply lg:hover:scale-105 lg:hover:shadow-2xl transition-all duration-300;
+            }
+            .skills-container .skill-img-container .skill-img {
                 @apply w-1/3 h-1/3 lg:w-1/4 lg:h-1/4;
             }
         </style>
