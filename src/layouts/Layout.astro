@@ -1,15 +1,13 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import Footer from '../components/footer/Footer.astro';
-import Navbar from '../components/navbar/Navbar.astro';
+import { ViewTransitions } from "astro:transitions";
+import Footer from "../components/footer/Footer.astro";
+import Navbar from "../components/navbar/Navbar.astro";
 
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-
-
 ---
 
 <!doctype html>
@@ -17,62 +15,82 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/logo-tiziano-simple-white-bg.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/logo-tiziano-simple-white-bg.svg"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="relative h-screen w-screen text-xl md:text-2xl lg:text-3xl font-medium leading-snug overflow-hidden">
+	<body
+		class="relative h-screen w-screen text-xl md:text-2xl lg:text-3xl font-medium leading-snug overflow-x-hidden overflow-y-auto"
+	>
 		<!-- <Background /> -->
-		<main class="relative text-center overflow-y-scroll overflow-x-hidden h-screen w-full bg-light text-dark scroll-smooth">
-			<Navbar />
-            <slot />
-            <Footer />
+		<Navbar />
+		<main
+			class="relative text-center w-full bg-light text-dark scroll-smooth"
+		>
+			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
-
 
 <style is:global>
 	/* @import url("../../public/fonts/fira-sans/css/fira-sans.css"); */
 	@font-face {
-  font-family: 'CabinetGrotesk-Variable';
-  src: url('/fonts/cabinet-grotesk/fonts/CabinetGrotesk-Variable.woff2') format('woff2'),
-       url('/fonts/cabinet-grotesk/fonts/CabinetGrotesk-Variable.woff') format('woff'),
-       url('/fonts/cabinet-grotesk/fonts/CabinetGrotesk-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-}
+		font-family: "CabinetGrotesk-Variable";
+		src:
+			url("/fonts/cabinet-grotesk/fonts/CabinetGrotesk-Variable.woff2")
+				format("woff2"),
+			url("/fonts/cabinet-grotesk/fonts/CabinetGrotesk-Variable.woff")
+				format("woff"),
+			url("/fonts/cabinet-grotesk/fonts/CabinetGrotesk-Variable.ttf")
+				format("truetype");
+		font-weight: 100 900;
+		font-display: swap;
+		font-style: normal;
+	}
 	@font-face {
-  font-family: 'FiraSans-Variable';
-  src: url('/fonts/fira-sans/fonts/FiraSans-Variable.woff2') format('woff2'),
-       url('/fonts/fira-sans/fonts/FiraSans-Variable.woff') format('woff'),
-       url('/fonts/fira-sans/fonts/FiraSans-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-}
+		font-family: "FiraSans-Variable";
+		src:
+			url("/fonts/fira-sans/fonts/FiraSans-Variable.woff2")
+				format("woff2"),
+			url("/fonts/fira-sans/fonts/FiraSans-Variable.woff") format("woff"),
+			url("/fonts/fira-sans/fonts/FiraSans-Variable.ttf")
+				format("truetype");
+		font-weight: 100 900;
+		font-display: swap;
+		font-style: normal;
+	}
 	@font-face {
-  font-family: 'Plein-Variable';
-  src: url('/fonts/plein/fonts/Plein-Variable.woff2') format('woff2'),
-       url('/fonts/plein/fonts/Plein-Variable.woff') format('woff'),
-       url('/fonts/plein/fonts/Plein-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-}
-
-	* ::selection {
-		@apply	text-light bg-dark;
+		font-family: "Plein-Variable";
+		src:
+			url("/fonts/plein/fonts/Plein-Variable.woff2") format("woff2"),
+			url("/fonts/plein/fonts/Plein-Variable.woff") format("woff"),
+			url("/fonts/plein/fonts/Plein-Variable.ttf") format("truetype");
+		font-weight: 100 900;
+		font-display: swap;
+		font-style: normal;
 	}
 
-	div, a {
+	* ::selection {
+		@apply text-light bg-dark;
+	}
+
+	div,
+	a {
 		@apply rounded-md;
 	}
 
-	body::-webkit-scrollbar, main::-webkit-scrollbar {
+	body::-webkit-scrollbar,
+	main::-webkit-scrollbar {
 		display: none;
 	}
 
@@ -80,36 +98,41 @@ const { title } = Astro.props;
 		font-family: CabinetGrotesk-Variable;
 		word-spacing: 1px;
 	}
-	
-	section {
-        @apply w-full pb-40 pt-10 md:pb-60  lg:pb-80 px-5 flex flex-col gap-10 md:gap-20 lg:gap-32 ;
-    }
 
-	mark, ins, b {
+	section {
+		@apply w-full pb-40 pt-10 md:pb-60  lg:pb-80 px-5 flex flex-col gap-10 md:gap-20 lg:gap-32;
+	}
+
+	mark,
+	ins,
+	b {
 		@apply italic;
 	}
 
-	input, textarea {
+	input,
+	textarea {
 		@apply bg-transparent outline-0 italic  text-dark;
 	}
 
-	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-		@apply  text-dark
+	input::-webkit-input-placeholder,
+	textarea::-webkit-input-placeholder {
+		@apply text-dark;
 	}
-	input::placeholder, textarea::placeholder {
-		@apply  text-dark;
+	input::placeholder,
+	textarea::placeholder {
+		@apply text-dark;
 	}
 
 	.gradient-bg {
-        @apply absolute h-full w-full top-0 left-0 bg-custom-gradient opacity-30 z-0 animate-pulse;
-    }
+		@apply absolute h-full w-full top-0 left-0 bg-custom-gradient opacity-30 z-0 animate-pulse;
+	}
 
 	.title {
 		@apply text-7xl md:text-big lg:text-extra-big xl:text-giant font-medium tracking-tighter leading-none;
 	}
 	.button {
-        @apply bg-dark text-light shadow-lg p-3 w-40 rounded-lg lg:hover:bg-transparent lg:hover:text-dark transition-colors duration-300;
-    }
+		@apply bg-dark text-light shadow-lg p-3 w-40 rounded-lg lg:hover:bg-transparent lg:hover:text-dark transition-colors duration-300;
+	}
 
 	.page-content::-webkit-scrollbar {
 		display: none;

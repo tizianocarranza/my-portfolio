@@ -7,19 +7,19 @@ import github from "../../assets/footer/github.svg";
 import { Image } from "astro:assets";
 ---
 
-<footer class="relative flex justify-center items-end w-full h-screen z-50 bg-light">
-    <div class="relative w-11/12 h-5/6 grid grid-rows-2 grid-cols-2 lg:grid-cols-3 gap-2 items-center py-5">
+<footer class="relative flex justify-center items-end w-full h-screen bg-light z-50">
+    <div class="relative w-full h-5/6 grid grid-rows-2 grid-cols-2 lg:grid-cols-3 gap-2 items-center p-5">
 
-        <div class="relative h-full w-full shadow-lg row-start-2 col-span-2 lg:row-span-2 flex justify-center items-center bg-light">
+        <div class="relative h-full w-full shadow-lg row-start-2 col-span-2 lg:row-span-2 flex justify-center items-center bg-light text-center overflow-hidden">
             <h1 class="title bg-custom-gradient text-transparent bg-clip-text">Thanks for visiting!</h1>
             <p class="text-xs absolute bottom-1 font-normal">© Tiziano 2024. All rights reserved.</p>
         </div>
 
         <a href="https://github.com/tizianocarranza" target="_blank" class="h-full w-full shadow-lg flex justify-center items-center bg-light hover:shadow-2xl transition-shadow">
-            <Image src={github} alt={"GitHub"} height={300} width={300} />
+            <Image src={github} alt={"GitHub"} height={300} width={300} class="h-full w-full"/>
         </a>
         <a href="https://www.linkedin.com/in/tizianocarranza" target="_blank" class="h-full w-full shadow-lg flex justify-center items-center bg-light hover:shadow-2xl transition-shadow">
-            <Image src={linkedin} alt={"LinkedIn"} height={300} width={300} />
+            <Image src={linkedin} alt={"LinkedIn"} height={300} width={300} class="h-full w-full"/>
         </a>
         </div>
     </footer>
